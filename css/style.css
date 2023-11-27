@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
+
+/* Kevin Powell resets */
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font: inherit;
+}
+
+html {
+	color-scheme: dark light;
+}
+
+body {
+	min-height: 100vh;
+}
+
+img, picture, svg, video {
+	display: block;
+	max-width: 100%;
+}
+/* end of resets */
+
+:root {
+	--clr-base: #191724;
+	--clr-surface: #1f1d2e;
+	--clr-overlay: #26233a;
+	--clr-muted: #6e6a86;
+	--clr-subtle: #908caa;
+	--clr-text: #e0def4;
+	--clr-love: #eb6f92;
+	--clr-gold: #f6c177;
+	--clr-rose: #ebbcba;
+	--clr-pine: #31748f;
+	--clr-foam: #9ccfd8;
+	--clr-iris: #c4a7e7;
+	--clr-highlight-low: #21202e;
+	--clr-highlight-med: #403d52;
+	--clr-highlight-high: #524f67;
+
+	--ff-mono: "Fira Code", monospace;
+	--fw-regular: 400;
+	--fw-medium: 500;
+	--fw-bold: 700;
+}
+
+/* Fluid font size variables, for browsers that support clamp */
+@supports (font-size: clamp(1rem, 1vw, 1rem)) {
+  :root {
+    --fs-sm: clamp(0.8rem, 0.25vw + 0.737rem, 0.938rem);
+		--fs-base: clamp(1rem, 0.455vw + 0.886rem, 1.25rem);
+		--fs-md: clamp(1.25rem, 0.757vw + 1.061rem, 1.666rem);
+		--fs-lg: clamp(1.563rem, 1.197vw + 1.263rem, 2.221rem);
+		--fs-xl: clamp(1.953rem, 1.832vw + 1.495rem, 2.961rem);
+		--fs-xxl: clamp(2.441rem, 2.737vw + 1.757rem, 3.947rem);
+		--fs-xxxl: clamp(3.052rem, 4.017vw + 2.048rem, 5.261rem);
+  }
+}
+/* Fallback variables for browsers that don't support clamp */
+@supports not (font-size: clamp(1rem, 1vw, 1rem)) {
+  :root {
+    --fs-sm: 0.8rem;
+		--fs-base: 1rem;
+		--fs-md: 1.25rem;
+		--fs-lg: 1.563rem;
+		--fs-xl: 1.953rem;
+		--fs-xxl: 2.441rem;
+		--fs-xxxl: 3.052rem;
+  }
+  @media screen and (min-width: 1280px) {
+    :root {
+      --fs-sm: 0.938rem;
+			--fs-base: 1.25rem;
+			--fs-md: 1.666rem;
+			--fs-lg: 2.221rem;
+			--fs-xl: 2.961rem;
+			--fs-xxl: 3.947rem;
+			--fs-xxxl: 5.261rem;
+    }
+  }
+}
+
+html * {
+	border: 1px solid var(--clr-rose);
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	color: var(--clr-text);
+	background: radial-gradient(at center top, var(--clr-surface), var(--clr-base));
+
+	font-family: var(--ff-mono);
+	font-size: var(--fs-base);
+}
+
+#content {
+	width: 80%;
+	max-width: 1280px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 1.75rem;
+}
+
+#hero {
+	width: max-content;
+	align-self: center;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#title {
+	font-size: var(--fs-xxl);
+	font-weight: var(--fw-bold);
+}
+
+#subtitle {
+	color: var(--clr-love);
+	font-size: var(--fs-sm);
+	font-weight: var(--fw-medium);
+
+	align-self: end;
+}
+
+#search-bar {
+	padding: 0.75rem;
+
+	border: 2px solid var(--clr-highlight-high);
+	border-radius: 0.75rem;
+
+	color: var(--clr-text);
+	background: var(--clr-surface);
+
+	font-size: var(--fs-base);
+}
+
+#info {
+	font-size: var(--fs-md);
+	font-weight: var(--fw-bold);
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+#info>div {
+	flex-grow: 1;
+}
+
+#info ul {
+	list-style-type: none;
+}
+
+#info li {
+	font-size: var(--fs-base);
+	font-weight: var(--fw-regular);
+}
+
+a {
+	color: var(--clr-iris);
+	text-decoration: solid underline var(--clr-iris) 1px;
+	text-underline-offset: 6px;
+}
+
+a:hover {
+	text-decoration-thickness: 3px;
+}
