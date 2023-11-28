@@ -1,5 +1,23 @@
-const items = document.getElementsByClassName("info-item");
+const searchBar = document.getElementById("search-bar");
 
+function goHome() {
+	window.location.href = "#";
+	searchBar.focus();
+	return false;
+}
+
+const backButtons = document.getElementsByClassName("back");
+for (let button of backButtons) {
+	button.onclick = goHome;
+}
+
+document.onkeyup = function(ev) {
+	if (ev.key === "Escape") {
+		goHome();
+	}
+}
+
+const items = document.getElementsByClassName("info-item");
 for (let item of items) {
 	item.dataset.highlighted = "1";
 }
@@ -31,7 +49,6 @@ function contains(str, pattern) {
 	return false;
 }
 
-const searchBar = document.getElementById("search-bar");
 searchBar.onkeyup = function(ev) {
 	const query = searchBar.value.trim();
 
