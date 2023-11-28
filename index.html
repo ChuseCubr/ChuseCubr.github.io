@@ -1,48 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>chuse.dev</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="css/style.css" rel="stylesheet">
-		<link rel="preload" href="js/site.js" as="script">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	</head>
-	<body>
-		<div id="content">
-			<div id="hero">
-				<h1 id="title">Chase Villa<span style="color: var(--clr-love)">rr</span>oel</h1><br/>
-				<p id="subtitle">*Yes, with two r's</p>
-			</div>
-			<input type="text" id="search-bar" placeholder="What would you like to know about me?" autofocus/>
-			<div id="info">
-				<div class="info-section" id="about">
-					<h2>! About</h2>
+
+<head>
+	<title>chuse.dev</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/style.css" rel="stylesheet">
+	<link rel="preload" href="js/site.js" as="script">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+	<section class="page">
+		<div id="landing">
+			<header id="hero">
+				<h1>
+					<span id="first-name">Chase</span>
+					<span id="last-name">
+						Villa<span id="rr">rr</span>oel
+					</span>
+				</h1>
+				<p>*Yes, with two r's</p>
+			</header>
+			<input type="text" id="search-bar" placeholder="What would you like to know about me?" autofocus />
+			<nav id="info">
+				<section class="info-section" data-section-href="#about">
+					<h1><a>! About</a></h1>
 					<ul>
-						<li class="info-item">! Bio</li>
-						<li class="info-item">! Education</li>
+						<li class="info-item"><a>! Bio</a></li>
+						<li class="info-item"><a>! Education</a></li>
+						<li class="info-item"><a>! Interests</a></li>
 					</ul>
-				</div>
-				<div class="info-section" id="experience">
-					<h2>$ Experience</h2>
+				</section>
+				<section class="info-section" data-section-href="#experience">
+					<h1><a>$ Experience</a></h1>
 					<ul>
-						<li class="info-item">$ Languages</li>
-						<li class="info-item">$ Projects</li>
+						<li class="info-item"><a>$ Languages</a></li>
+						<li class="info-item"><a>$ Projects</a></li>
 					</ul>
-				</div>
-				<div class="info-section" id="contact">
-					<h2>@ Contact</h2>
+				</section>
+				<section class="info-section" data-section-href="#contact">
+					<h1><a>@ Contact</a></h1>
 					<ul>
-						<li class="info-item">@ GitHub</li>
-						<li class="info-item">@ Email</li>
+						<li class="info-item"><a>@ GitHub</a></li>
+						<li class="info-item"><a>@ Email</a></li>
 					</ul>
-				</div>
-			</div>
-			<div id="info-content">
-				<h1>Bio</h1>
-			</div>
+				</section>
+			</nav>
 		</div>
-		<script defer src="js/site.js"></script>
-	</body>
+	</section>
+	<section id="about" class="page">
+		<div class="content">
+			<h1>About</h1>
+			<h2>Bio</h2>
+			<p>
+			</p>
+			<h2>Education</h2>
+			<h2>Interests</h2>
+		</div>
+	</section>
+	<section id="experience" class="page">
+		<div class="content">
+			<h1>Experience</h1>
+			<h2>Languages</h2>
+			<h2>Projects</h2>
+		</div>
+	</section>
+	<section id="contact" class="page">
+		<div class="content">
+			<h1>Contact</h1>
+			<h2>GitHub</h2>
+			<h2>Email</h2>
+		</div>
+	</section>
+	<script defer src="js/site.js"></script>
+</body>
+
 </html>
