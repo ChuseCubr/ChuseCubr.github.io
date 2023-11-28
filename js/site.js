@@ -2,7 +2,7 @@ const searchBar = document.getElementById("search-bar");
 
 function goHome() {
 	window.location.href = "#";
-	searchBar.focus();
+	searchBar.select();
 	return false;
 }
 
@@ -23,7 +23,7 @@ for (let item of items) {
 }
 
 const sections = document.getElementsByClassName("info-section");
-for (let section of sections) {
+for (const section of sections) {
 	const href = section.dataset.sectionHref;
 	const links = section.querySelectorAll("a");
 	for (let link of links) {
@@ -62,7 +62,7 @@ searchBar.onkeyup = function(ev) {
 	}
 
 	if (ev.key === "Enter") {
-		for (let item of items) {
+		for (const item of items) {
 			const item_label = item.innerText.toLowerCase();
 			if (contains(item_label, query.toLowerCase())) {
 				const page = item.children[0].href;
@@ -85,3 +85,62 @@ searchBar.onkeyup = function(ev) {
 		}
 	}
 };
+
+const colors = {
+	"dark": {
+		"--clr-base": "#191724",
+		"--clr-surface": "#1f1d2e",
+		"--clr-overlay": "#26233a",
+		"--clr-muted": "#6e6a86",
+		"--clr-subtle": "#908caa",
+		"--clr-text": "#e0def4",
+		"--clr-love": "#eb6f92",
+		"--clr-gold": "#f6c177",
+		"--clr-rose": "#ebbcba",
+		"--clr-pine": "#31748f",
+		"--clr-foam": "#9ccfd8",
+		"--clr-iris": "#c4a7e7",
+		"--clr-highlight-low": "#21202e",
+		"--clr-highlight-med": "#403d52",
+		"--clr-highlight-high": "#524f67",
+		"--clr-shadow": "var(--clr-base)",
+	},
+	"light": {
+		"--clr-base": "#faf4ed",
+		"--clr-surface": "#fffaf3",
+		"--clr-overlay": "#f2e9e1",
+		"--clr-muted": "#9893a5",
+		"--clr-subtle": "#797593",
+		"--clr-text": "#575279",
+		"--clr-love": "#b4637a",
+		"--clr-gold": "#ea9d34",
+		"--clr-rose": "#d7827e",
+		"--clr-pine": "#286983",
+		"--clr-foam": "#56949f",
+		"--clr-iris": "#907aa9",
+		"--clr-highlight-low": "#f4ede8",
+		"--clr-highlight-med": "#dfdad9",
+		"--clr-highlight-high": "#cecacd",
+		"--clr-shadow": "var(--clr-highlight-med)",
+	}
+}
+
+let darkMode = true;
+let root = document.querySelector(":root");
+const darkModeButton = document.getElementById("toggle-dark-mode");
+
+function toggleDarkMode() {
+	if (darkMode === false) {
+		darkMode = true;
+		for (const [name, color] of Object.entries(colors.dark)) {
+			root.style.setProperty(name, color);
+			darkModeButton.innerText = "light_mode";
+		}
+	} else {
+		darkMode = false;
+		for (const [name, color] of Object.entries(colors.light)) {
+			root.style.setProperty(name, color);
+			darkModeButton.innerText = "dark_mode";
+		}
+	}
+}

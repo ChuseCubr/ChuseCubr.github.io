@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0");
 
 /* Kevin Powell resets */
 *, *::before, *::after {
@@ -42,6 +43,10 @@ img, picture, svg, video {
 	--clr-highlight-low: #21202e;
 	--clr-highlight-med: #403d52;
 	--clr-highlight-high: #524f67;
+
+	--clr-bg1: var(--clr-base);
+	--clr-bg2: var(--clr-overlay);
+	--clr-shadow: var(--clr-base);
 
 	--ff-mono: "Fira Code", monospace;
 	--fw-regular: 400;
@@ -92,11 +97,29 @@ img, picture, svg, video {
 
 body {
 	color: var(--clr-text);
-	background: radial-gradient(at center top, var(--clr-overlay), var(--clr-base));
+	background: radial-gradient(at center top, var(--clr-bg2), var(--clr-bg1));
 	background-attachment: fixed;
 
 	font-family: var(--ff-mono);
 	font-size: var(--fs-base);
+}
+
+#toggle-dark-mode {
+	color: var(--clr-text);
+	background-color: transparent;
+
+	border: none;
+	border-radius: 0.5rem;
+
+	padding: 0.5rem;
+	margin: 3rem;
+	position: fixed;
+	right: 0;
+}
+
+#toggle-dark-mode:hover {
+	background-color: var(--clr-highlight-high);
+	cursor: pointer;
 }
 
 .page {
@@ -128,7 +151,7 @@ body {
 #hero>h1 {
 	font-size: var(--fs-xxl);
 	font-weight: var(--fw-bold);
-	text-shadow: 0.5rem 0.5rem var(--clr-base);
+	text-shadow: 0.5rem 0.5rem var(--clr-shadow);
 }
 
 #hero>p {
@@ -225,6 +248,7 @@ a {
 	color: var(--clr-text);
 	text-decoration: none;
 	text-underline-offset: 6px;
+	cursor: pointer;
 }
 
 a:hover {
