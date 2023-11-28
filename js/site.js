@@ -3,17 +3,48 @@ const searchBar = document.getElementById("search-bar");
 function goHome() {
 	window.location.href = "#";
 	searchBar.select();
-	return false;
 }
 
-const backButtons = document.getElementsByClassName("back");
-for (let button of backButtons) {
+const firstSection = document.getElementsByClassName("page")[1].id;
+document.getElementById("down").onclick = _ => {
+	window.location.href = `#${firstSection}`;
+}
+
+const homeButtons = document.getElementsByClassName("home");
+for (let button of homeButtons) {
 	button.onclick = goHome;
 }
 
-document.onkeyup = function(ev) {
-	if (ev.key === "Escape") {
-		goHome();
+const prevButtons = document.getElementsByClassName("prev");
+for (let button of prevButtons) {
+	prevSection = button.closest("section").previousElementSibling.id;
+	button.href = `#${prevSection}`
+}
+
+const nextButtons = document.getElementsByClassName("next");
+for (let button of nextButtons) {
+	nextSection = button.closest("section").nextElementSibling.id;
+	button.href = `#${nextSection}`
+}
+
+document.onkeydown = function(ev) {
+	if (ev.target.tagName.toLowerCase() === "input") {
+		return;
+	}
+
+	switch (ev.key) {
+		case "/":
+			ev.preventDefault();
+			goHome();
+			break;
+		case "j":
+		case "l":
+			window.location.href = "#contact";
+			break;
+		case "k":
+		case "h":
+			window.location.href = "#contact";
+			break;
 	}
 }
 
@@ -65,8 +96,10 @@ searchBar.onkeyup = function(ev) {
 		for (const item of items) {
 			const item_label = item.innerText.toLowerCase();
 			if (contains(item_label, query.toLowerCase())) {
-				const page = item.children[0].href;
-				window.location.href = page;
+				const parentSection = item.closest(".info-section");
+				const href = parentSection.dataset.sectionHref;
+				window.location.href = href;
+				document.querySelector(href).focus();
 				return;
 			}
 		}

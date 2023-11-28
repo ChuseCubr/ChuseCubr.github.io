@@ -109,7 +109,7 @@ body {
 	background-color: transparent;
 
 	border: none;
-	border-radius: 0.5rem;
+	border-radius: 1em;
 
 	padding: 0.5rem;
 	margin: 3rem;
@@ -117,7 +117,20 @@ body {
 	right: 0;
 }
 
-#toggle-dark-mode:hover {
+#down {
+	font-size: var(--fs-lg);
+	width: max-content;
+	align-self: center;
+
+	color: var(--clr-text);
+	background-color: transparent;
+
+	border: none;
+	border-radius: 1em;
+	padding: 0.5rem;
+}
+
+#down:hover, #toggle-dark-mode:hover {
 	background-color: var(--clr-highlight-high);
 	cursor: pointer;
 }
@@ -235,6 +248,7 @@ body {
 }
 
 .content>h1 {
+	color: var(--clr-gold);
 	font-size: var(--fs-lg);
 	font-weight: var(--fw-bold);
 }
@@ -242,6 +256,23 @@ body {
 .content>h2 {
 	font-size: var(--fs-md);
 	font-weight: var(--fw-medium);
+}
+
+.content>a {
+	color: var(--clr-iris);
+}
+
+.content>a:hover {
+	text-decoration: 1px underline var(--clr-iris);
+}
+
+.prev {
+	float: right;
+}
+
+.next {
+	float: right;
+	margin-left: 2ch;
 }
 
 a {
