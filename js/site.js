@@ -1,3 +1,5 @@
+// ELEMENT INITIALIZATION
+// Setting these properties in HTML would be repetitive, so do that here
 const searchBar = document.getElementById("search-bar");
 
 function goHome() {
@@ -5,9 +7,9 @@ function goHome() {
 	searchBar.select();
 }
 
-const firstSection = document.getElementsByClassName("page")[1].id;
-document.getElementById("down").onclick = _ => {
-	window.location.href = `#${firstSection}`;
+const pages = document.getElementsByClassName("page");
+document.getElementById("down").onclick = function() {
+	window.location.href = `#${pages[1].id}`;
 }
 
 const homeButtons = document.getElementsByClassName("home");
@@ -27,27 +29,6 @@ for (let button of nextButtons) {
 	button.href = `#${nextSection}`
 }
 
-document.onkeydown = function(ev) {
-	if (ev.target.tagName.toLowerCase() === "input") {
-		return;
-	}
-
-	switch (ev.key) {
-		case "/":
-			ev.preventDefault();
-			goHome();
-			break;
-		case "j":
-		case "l":
-			window.location.href = "#contact";
-			break;
-		case "k":
-		case "h":
-			window.location.href = "#contact";
-			break;
-	}
-}
-
 const items = document.getElementsByClassName("info-item");
 for (let item of items) {
 	item.dataset.highlighted = "1";
@@ -62,6 +43,42 @@ for (const section of sections) {
 	}
 }
 
+// KEYMAPS
+// Keyboard-based navigation for accessibility (vim users be like)
+document.onkeydown = function(ev) {
+	if (ev.target.tagName.toLowerCase() === "input") {
+		return;
+	}
+
+	const activePageIndex = Math.floor(window.scrollY / document.documentElement.clientHeight);
+	const activePage = pages[activePageIndex];
+	switch (ev.key) {
+		case "/":
+			ev.preventDefault();
+			goHome();
+			break;
+		case "j":
+		case "l":
+		case "ArrowDown":
+		case "ArrowRight":
+			if (activePageIndex === pages.length - 1) {
+				return;
+			}
+
+			const nextPage = activePage.nextElementSibling.id;
+			window.location.href = `#${nextPage}`
+			return false;
+		case "k":
+		case "h":
+		case "ArrowUp":
+		case "ArrowLeft":
+			const prevPage = activePage.previousElementSibling.id;
+			window.location.href = `#${prevPage}`
+			return false;
+	}
+}
+
+// SEARCH BAR LOGIC
 function contains(str, pattern) {
 	let pattern_idx = 0;
 	for (i = 0; i < str.length; i++) {
@@ -82,6 +99,11 @@ function contains(str, pattern) {
 
 searchBar.onkeyup = function(ev) {
 	const query = searchBar.value.trim();
+
+	if (ev.key === "Escape") {
+		searchBar.blur();
+		return;
+	}
 
 	if (query === "") {
 		for (let item of items) {
@@ -119,6 +141,18 @@ searchBar.onkeyup = function(ev) {
 	}
 };
 
+// INFO TOGGLE
+const noticeIcon = document.getElementById("notice-icon");
+const noticeText = document.getElementById("notice-text");
+noticeIcon.onmouseover = function() {
+	noticeText.dataset.display = "1";
+}
+
+noticeIcon.onmouseout = function() {
+	noticeText.dataset.display = "0";
+}
+
+// COLORSCHEME TOGGLE
 const colors = {
 	"dark": {
 		"--clr-base": "#191724",
@@ -177,3 +211,5 @@ function toggleDarkMode() {
 		}
 	}
 }
+
+darkModeButton.onclick = toggleDarkMode;
