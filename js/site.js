@@ -170,6 +170,8 @@ const colors = {
 		"--clr-highlight-low": "#21202e",
 		"--clr-highlight-med": "#403d52",
 		"--clr-highlight-high": "#524f67",
+		"--clr-bg1": "var(--clr-base)",
+		"--clr-bg2": "var(--clr-overlay)",
 		"--clr-shadow": "var(--clr-base)",
 	},
 	"light": {
@@ -188,6 +190,8 @@ const colors = {
 		"--clr-highlight-low": "#f4ede8",
 		"--clr-highlight-med": "#dfdad9",
 		"--clr-highlight-high": "#cecacd",
+		"--clr-bg1": "var(--clr-highlight-high)",
+		"--clr-bg2": "var(--clr-surface)",
 		"--clr-shadow": "var(--clr-highlight-med)",
 	}
 }
