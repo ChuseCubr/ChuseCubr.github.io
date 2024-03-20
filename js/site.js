@@ -8,7 +8,7 @@ function goHome() {
 }
 
 const pages = document.getElementsByClassName("page");
-document.getElementById("down").onclick = function () {
+document.getElementById("down").onclick = function() {
   window.location.href = `#${pages[1].id}`;
 };
 
@@ -45,7 +45,7 @@ for (const section of sections) {
 
 // KEYMAPS
 // Keyboard-based navigation for accessibility (vim users be like)
-document.onkeydown = function (ev) {
+document.onkeydown = function(ev) {
   if (ev.target.tagName.toLowerCase() === "input") {
     return;
   }
@@ -99,7 +99,7 @@ function contains(str, pattern) {
   return false;
 }
 
-searchBar.onkeyup = function (ev) {
+searchBar.onkeyup = function(ev) {
   const query = searchBar.value.trim();
 
   if (ev.key === "Escape") {
@@ -146,11 +146,11 @@ searchBar.onkeyup = function (ev) {
 // INFO TOGGLE
 const noticeIcon = document.getElementById("notice-icon");
 const noticeText = document.getElementById("notice-text");
-noticeIcon.onmouseover = function () {
+noticeIcon.onmouseover = function() {
   noticeText.dataset.display = "1";
 };
 
-noticeIcon.onmouseout = function () {
+noticeIcon.onmouseout = function() {
   noticeText.dataset.display = "0";
 };
 
