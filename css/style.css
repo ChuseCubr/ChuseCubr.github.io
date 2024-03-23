@@ -296,11 +296,6 @@ body {
 	border-radius: 0.5rem;
 }
 
-.content {
-	overflow-y: scroll;
-	max-height: 90%;
-}
-
 .page-container>h1 {
 	color: rgb(var(--clr-gold));
 	font-size: var(--fs-lg);
@@ -308,11 +303,11 @@ body {
 	margin: 6pt 0;
 }
 
-.page-container>a {
+.page-container a {
 	color: rgb(var(--clr-iris));
 }
 
-.page-container>a:hover {
+.page-container a:hover {
 	text-decoration: 1px underline rgb(var(--clr-iris));
 }
 
@@ -359,19 +354,11 @@ a:hover {
 	max-width: 98%;
 }
 
-#languages .card {
-	width: 20%;
-}
-
-#works .card {
-	width: 40%;
-	padding: 0;
-}
-
 .card {
 	flex: 0 0 auto;
 	padding: 1em;
 	margin: 1em;
+	background: rgba(var(--clr-subtle), .1);
 	border: 2px solid rgb(var(--clr-highlight-high));
 	border-radius: 0.5rem;
 
@@ -381,65 +368,14 @@ a:hover {
 	}
 }
 
-#works>.card>div {
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	padding: 1em;
-	border-radius: inherit;
-	background: rgba(var(--clr-base), 0);
-	color: rgba(var(--clr-text), 0);
-	cursor: pointer;
+#languages .card {
+	width: 20%;
 }
 
-#works>.card>div:hover {
-	transition:
-		background 0.5s ease,
-		backdrop-filter 0.5s ease,
-		color 0.5s ease;
-	background: rgba(var(--clr-base), 0.9);
-	backdrop-filter: blur(5pt);
-	color: rgba(var(--clr-text), 1);
+#works .card {
+	width: 40%;
 }
 
-#pubrams {
-	background: url(../assets/pubrams.png);
-	background-size: cover;
-	background-position: center;
-}
-
-#dwindlist {
-	background: url(../assets/dwindlist.png);
-	background-size: cover;
-	background-position: center;
-}
-
-#dwindlist:hover {
-	background: rgba(var(--clr-base), 0.9) url(../assets/dwindlist.png);
-	background-size: cover;
-	background-position: center;
-}
-
-#portfolio {
-	background: url(../assets/portfolio.png);
-	background-size: cover;
-	background-position: center;
-}
-
-#portfolio:hover {
-	background: rgba(var(--clr-base), 0.9) url(../assets/portfolio.png);
-	background-size: cover;
-	background-position: center;
-}
-
-#docket {
-	background: url(../assets/docket.png);
-	background-size: cover;
-	background-position: center;
-}
-
-#docket:hover {
-	background: rgba(var(--clr-base), 0.9) url(../assets/docket.png);
-	background-size: cover;
-	background-position: center;
+.card h3 {
+	margin-top: 0;
 }
