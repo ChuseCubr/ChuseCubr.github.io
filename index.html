@@ -7,6 +7,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link href="css/style.css" rel="stylesheet" />
 	<link rel="preload" href="js/site.js" as="script" />
+	<link rel="preload" href="js/keymaps.js" as="script" />
+	<link rel="preload" href="js/search.js" as="script" />
+	<link rel="preload" href="js/theme.js" as="script" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 </head>
@@ -79,8 +82,11 @@
 			<a class="next">→ Next (j)</a>
 			<a class="prev">← Prev (k)</a>
 			<h1>Experience</h1>
-			<h2>Projects</h2>
-			<div id="works" class="cards-container">
+			<h2>
+				<a id="projects-button" class="tab-selector" data-selected="1">Projects</a>
+				<a id="languages-button" class="tab-selector">Languages</a>
+			</h2>
+			<div id="projects" class="cards-container">
 				<div id="pubrams" class="card">
 					<h3><a href="https://github.com/APC-SemiByte/PubRAMS" target="_blank">PubRAMS</a></h3>
 					<a href="https://github.com/APC-SemiByte/PubRAMS" target="_blank">
@@ -94,7 +100,7 @@
 						<li>EF Core</li>
 					</ul>
 				</div>
-				<div id="dwindlist" class="card work">
+				<div id="dwindlist" class="card">
 					<h3><a href="https://github.com/dwindlist/dwindlist" target="_blank">dwindlist</a></h3>
 					<a href="https://github.com/dwindlist/dwindlist" target="_blank">
 						<img src="assets/dwindlist.png" alt="dwindlist screenshot" />
@@ -107,7 +113,7 @@
 						<li>EF Core</li>
 					</ul>
 				</div>
-				<div id="portfolio" class="card work">
+				<div id="portfolio" class="card">
 					<h3><a href="https://github.com/ChuseCubr/Portfolio" target="_blank">Portfolio</a></h3>
 					<a href="https://github.com/ChuseCubr/Portfolio" target="_blank">
 						<img src="assets/docket.png" alt="portfolio screenshot" />
@@ -118,7 +124,7 @@
 						<li>HTML, CSS, JS</li>
 					</ul>
 				</div>
-				<div id="docket" class="card work">
+				<div id="docket" class="card">
 					<h3><a href="https://github.com/ChuseCubr/RM-Docket" target="_blank">Docket</a></h3>
 					<a href="https://github.com/ChuseCubr/RM-Docket" target="_blank">
 						<img src="assets/docket.png" alt="docket screenshot" />
@@ -129,6 +135,8 @@
 						<li>Lua</li>
 					</ul>
 				</div>
+			</div>
+			<div id="languages" class="cards-container">
 			</div>
 		</div>
 	</section>
@@ -142,6 +150,9 @@
 		</div>
 	</section>
 	<script defer src="js/site.js"></script>
+	<script defer src="js/keymaps.js"></script>
+	<script defer src="js/search.js"></script>
+	<script defer src="js/theme.js"></script>
 </body>
 
 </html>

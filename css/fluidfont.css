@@ -1,0 +1,36 @@
+@supports (font-size: clamp(1rem, 1vw, 1rem)) {
+	:root {
+		--fs-sm: clamp(0.8rem, 0.25vw + 0.737rem, 0.938rem);
+		--fs-base: clamp(1rem, 0.455vw + 0.886rem, 1.25rem);
+		--fs-md: clamp(1.25rem, 0.757vw + 1.061rem, 1.666rem);
+		--fs-lg: clamp(1.563rem, 1.197vw + 1.263rem, 2.221rem);
+		--fs-xl: clamp(1.953rem, 1.832vw + 1.495rem, 2.961rem);
+		--fs-xxl: clamp(2.441rem, 2.737vw + 1.757rem, 3.947rem);
+		--fs-xxxl: clamp(3.052rem, 4.017vw + 2.048rem, 5.261rem);
+	}
+}
+
+/* Fallback variables for browsers that don't support clamp */
+@supports not (font-size: clamp(1rem, 1vw, 1rem)) {
+	:root {
+		--fs-sm: 0.8rem;
+		--fs-base: 1rem;
+		--fs-md: 1.25rem;
+		--fs-lg: 1.563rem;
+		--fs-xl: 1.953rem;
+		--fs-xxl: 2.441rem;
+		--fs-xxxl: 3.052rem;
+	}
+
+	@media screen and (min-width: 1280px) {
+		:root {
+			--fs-sm: 0.938rem;
+			--fs-base: 1.25rem;
+			--fs-md: 1.666rem;
+			--fs-lg: 2.221rem;
+			--fs-xl: 2.961rem;
+			--fs-xxl: 3.947rem;
+			--fs-xxxl: 5.261rem;
+		}
+	}
+}
