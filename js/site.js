@@ -76,7 +76,7 @@ function selectSection(
   otherSections
 ) {
   selectedButton.dataset.selected = "1";
-  selectedSection.style.display = null
+  selectedSection.dataset.display = "1";
   otherButtons.forEach(element => element.dataset.selected = "0");
-  otherSections.forEach(element => element.style.display = "none");
+  otherSections.forEach(element => element.dataset.display = "0");
 }
