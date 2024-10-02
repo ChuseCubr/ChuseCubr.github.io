@@ -57,16 +57,22 @@ noticeIcon.onmouseout = function() {
 
 // EXPERIENCE CARD DISPLAYS
 const projects = document. getElementById("projects");
-const languages = document. getElementById("languages");
+const technologies = document. getElementById("technologies");
+const education = document. getElementById("education");
 const projectsButton = document. getElementById("projects-button");
-const languagesButton = document. getElementById("languages-button");
+const technologiesButton = document. getElementById("languages-button");
+const educationButton = document. getElementById("education-button");
 
 projectsButton.onclick = function() {
-  selectSection(projectsButton, projects, [languagesButton], [languages]);
+  selectSection(projectsButton, projects, [technologiesButton, educationButton], [technologies, education]);
 }
 
-languagesButton.onclick = function() {
-  selectSection(languagesButton, languages, [projectsButton], [projects]);
+technologiesButton.onclick = function() {
+  selectSection(technologiesButton, technologies, [projectsButton, educationButton], [projects, education]);
+}
+
+educationButton.onclick = function() {
+  selectSection(educationButton, education, [projectsButton, technologiesButton], [projects, technologies]);
 }
 
 function selectSection(

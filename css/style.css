@@ -283,7 +283,7 @@ a>img:hover {
 	display: none;
 }
 
-#languages[data-display="1"] {
+#technologies[data-display="1"] {
 	display: flex;
 	flex-wrap: wrap;
 	overflow: scroll;
@@ -301,6 +301,25 @@ a>img:hover {
 	.card {
 		width: 40%;
 	}
+}
+
+#education[data-display="1"] {
+	display: flex;
+
+	.card {
+		float: center;
+		width: 40%;
+	}
+}
+
+#contacts {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+#interests {
+	display: flex;
+	overflow-y: scroll;
 }
 
 .card {
