@@ -39,7 +39,7 @@ searchBar.onkeyup = function(ev) {
       if (contains(item_label, query.toLowerCase())) {
         const parentSection = item.closest(".info-section");
         const href = parentSection.dataset.sectionHref;
-        window.location.href = href;
+        item.firstElementChild.click();
         document.querySelector(href).focus();
         return;
       }
