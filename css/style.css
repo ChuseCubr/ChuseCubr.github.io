@@ -5,9 +5,9 @@
 @import url(variables.css);
 
 /* debug bounding boxes */
-/* html * { */
-/* 	border: 1px solid rgb(var(--clr-rose)); */
-/* } */
+/*html * {*/
+/*	border: 1px solid rgb(var(--clr-rose));*/
+/*}*/
 
 body {
 	color: rgb(var(--clr-text));
@@ -366,6 +366,26 @@ a>img:hover {
 		.rating[data-rating="1"]:before {
 			content: "radio_button_checkedradio_button_uncheckedradio_button_uncheckedradio_button_uncheckedradio_button_unchecked";
 			color: rgb(var(--clr-love));
+		}
+	}
+}
+
+#mobile-warning {
+	display: none;
+}
+
+@media only screen and (max-width:959px) {
+	.page { display: none; }
+  #mobile-warning {
+		display: grid;
+		text-align: center;
+	}
+}
+
+@media only screen and (max-width:1366px) {
+	#technologies[data-display="1"] {
+		.card {
+			width: 25%;
 		}
 	}
 }
